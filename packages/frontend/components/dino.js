@@ -46,7 +46,7 @@ const Dino = () => {
 
       // 640 -> 240
       // 8   -> 6
-      const scale = scH * 0.00015 + 1.5;
+      const scale = scH * 0.000015 + 1.5;
       const camera = new THREE.OrthographicCamera(
         -scale,
         scale,
@@ -75,7 +75,7 @@ const Dino = () => {
         receiveShadow: false,
         castShadow: false,
       }).then((dino) => {
-        dino.scale.set(1, 1, 1);
+        dino.scale.set(0.5, 0.5, 0.5);
         scene.add(dino);
         animate();
         setLoading(false);
@@ -122,7 +122,7 @@ const Dino = () => {
 
   return (
     // <DogContainer ref={refContainer}>{loading && <DogSpinner />}</DogContainer>
-    <div ref={refContainer} style={{ width: "25%", height: "40vh" }}>
+    <div ref={refContainer} style={{ width: "55%", height: "95vh" }}>
       {loading && <p>Loading...</p>}
     </div>
   );
