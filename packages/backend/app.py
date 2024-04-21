@@ -1,12 +1,13 @@
 from fastapi import FastAPI, File, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
 import shutil   
+from fastapi.responses import FileResponse
 
 app = FastAPI()
 
 # CORS middleware to allow connections from your Next.js frontend
 origins = [
-    "http://localhost:3001",  # Adjust the port if your Next.js app runs on a different one
+    "http://localhost:3000",  # Adjust the port if your Next.js app runs on a different one
 ]
 
 app.add_middleware(
@@ -24,3 +25,9 @@ async def upload_audio(file: UploadFile = File(...)):
         shutil.copyfileobj(file.file, buffer)
 
     return {"filename": file.filename}
+
+@app.get("/processed")
+async def process_audio():
+    # send the output.mp3 file to the frontend
+    return FileResponse("output.mp3")
+
