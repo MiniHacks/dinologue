@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Box, IconButton } from '@chakra-ui/react';
+import { Box, HStack, IconButton } from '@chakra-ui/react';
 import { FaMicrophone, FaStop } from 'react-icons/fa'; // Using React Icons for more options
 
 const AudioRecorder: React.FC = () => {
@@ -75,6 +75,7 @@ const AudioRecorder: React.FC = () => {
 
   return (
     <Box px={"10"} py={"5"}>
+      <HStack justifyContent={"center"}>
       <IconButton 
         icon={<FaMicrophone />} 
         onClick={handleStartRecording} 
@@ -94,6 +95,7 @@ const AudioRecorder: React.FC = () => {
         m={2}
       />
       {audioUrl && <audio src={audioUrl} controls autoPlay />}
+      </HStack>
     </Box>
   );
 };

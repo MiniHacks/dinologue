@@ -23,8 +23,8 @@ def main():
     # Process audio file
     local_audio_file_path = '../backend/recording.mp3'
     audio_file = upload_audio_file(local_audio_file_path)
-    prompt_1 = "Detect the language of the following audio file. The speaker is speaking in first person. Only provide the langauge in the following format: 'insert language'."
-    prompt = "Listen carefully to the following audio file. Provide 2 sentences of feedback on the language they are speaking and how well they are speaking it. Important: Correct them if they are wrong. Speak back in the language that the speaker was speaking in. Important: Make sure to reference the speaker in second person."
+    prompt_1 = "Detect the language of the following audio file. The speaker is speaking in first person. Important: Only output a single word which is the language."
+    prompt = "Listen carefully to the following audio file. Provide 2 sentences of feedback on the language they are speaking and how well they are speaking it, no titles. Correct them if they are wrong. Make sure to reference the speaker in the first person, such as you did this, and speak back in English."
     model_name = 'models/gemini-1.5-pro-latest'
     model = genai.GenerativeModel(model_name)
     response_1 = model.generate_content([prompt_1, audio_file])
@@ -78,7 +78,7 @@ def main():
 
     language = response_1.text
     # process language text by stripping the text
-    language = language.strip().lower()
+    language = language.strip().lower().replace("'", "")
     print(language)
     # Output text response
     print(response.text)
