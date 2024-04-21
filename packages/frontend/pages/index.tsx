@@ -4,7 +4,11 @@ import {
   Center,
   chakra,
   Heading,
+  Link,
+  Text,
+  Button,
   Spinner,
+  HStack,
   VStack,
 } from "@chakra-ui/react";
 import dynamic from "next/dynamic";
@@ -29,6 +33,62 @@ const Home: NextPage = () => {
   return (
   <PageLayout title={"Dinologue"}>
       <Box px={10} py={5} maxWidth="100%" minH="100%">
+      <Button variant={"ghost"} position={"absolute"} top={"75px"} left={"1295px"} zIndex={2} 
+      _hover={{
+        variant: "ghost",
+        textDecoration: "underline"
+      }}
+      
+      style={{
+        color: "#453C3C",
+        fontFamily: "Inter",
+        fontWeight: "500",
+        fontSize: "20px"
+    }}>
+      <Link>devpost</Link>
+    </Button>
+    <Button variant={"ghost"} position={"absolute"} top={"80px"} left={"420px"} zIndex={2} 
+      _hover={{
+        variant: "ghost",
+        textDecoration: "underline"
+      }}
+      
+      style={{
+        color: "#453C3C",
+        fontFamily: "Inter",
+        fontWeight: "500",
+        fontSize: "20px"
+    }}>
+      <Link target="blank" href={"https://github.com/iamstutishah/dinologue"}>github</Link>
+    </Button>
+    <Button variant={"ghost"} position={"absolute"} top={"125px"} left={"860px"} zIndex={2} 
+      _hover={{
+        variant: "ghost",
+        textDecoration: "underline"
+      }}
+      
+      style={{
+        color: "#453C3C",
+        fontFamily: "Inter",
+        fontWeight: "500",
+        fontSize: "20px"
+    }}>
+      <Link>about us</Link>
+    </Button>
+    <Button variant={"ghost"} position={"absolute"} top={"250px"} left={"210px"} zIndex={2} 
+      _hover={{
+        variant: "ghost",
+        textDecoration: "underline"
+      }}
+      
+      style={{
+        color: "#453C3C",
+        fontFamily: "Inter",
+        fontWeight: "500",
+        fontSize: "20px"
+    }}>
+      <Link>theo facts</Link>
+    </Button>
       <Box position="absolute" bottom="0" right="0" zIndex="1">
         <svg width="1512" height="471" viewBox="0 0 1512 471" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M482.5 136L126 562H1469L1030.5 0L765.5 431.5L482.5 136Z" fill="#3C413C"/>
@@ -67,7 +127,42 @@ const Home: NextPage = () => {
         </svg>
       </Box>
 
-      <Heading as={"h1"}></Heading>
+      <VStack mt={"250"}>
+        <HStack>
+      <Box style={{
+        fontSize: "50px",
+        fontWeight: "bold",
+        color: "#453C3C",
+        fontFamily: "Poppins",
+        textAlign: "center",
+        marginRight: "-6px"
+      
+      }}>dino</Box>
+      <Box style={{
+        fontSize: "50px",
+        fontWeight: "bold",
+        color: "#FFFFFF",
+        fontFamily: "Poppins",
+        textAlign: "center",
+      
+      }}>logue</Box>
+      </HStack>
+      <Button style={{
+        backgroundColor: "#453C3C",
+        color: "#FFFFFF",
+        borderRadius: "20px",
+        width: "150px",
+        height: "50px",
+        fontSize: "20px",
+        fontWeight: "300",
+        fontFamily: "Poppins",
+        marginTop: "20px"
+      
+      }}>
+        <Text>start here</Text>
+      </Button>
+      </VStack>
+      
       </Box>
       <Box position="absolute" bottom="-60" left="80" zIndex="1" height="100%" width="100%">
         <DynamicModel /> 

@@ -7,7 +7,7 @@ type PageLayoutProps = MyHeadingProps & {
   bgColor?: string;  // Optional background color prop
 };
 
-const PageLayout = ({ children, bgColor = "linear-gradient(#e66465, #9198e5);", ...props }: PageLayoutProps): JSX.Element => (
+const PageLayout = ({ children, bgColor = "linear-gradient(#E9D17D, #704683);", ...props }: PageLayoutProps): JSX.Element => (
   <Box bg={bgColor} w="full" minH="100vh">
     <MyHeading {...props} />
     {children}
