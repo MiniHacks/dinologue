@@ -1,3 +1,7 @@
+# Dinologue -- the best way to learn a language
+
+![](https://i.imgur.com/FsNla5r.jpeg)
+
 ## Inspiration
 
 As college students, learning new languages is not only exciting but also highly beneficial for broadening our academic and professional horizons. However, the learning process can sometimes be confusing, and it's easy to forget a word without even realizing it. To tackle this challenge, we created Dinologue—a supportive and interactive language learning platform featuring our friendly dinosaur mascot, Theo!
