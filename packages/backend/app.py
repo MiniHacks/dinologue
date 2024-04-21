@@ -2,6 +2,8 @@ from fastapi import FastAPI, File, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
 import shutil   
 from fastapi.responses import FileResponse
+# import the geminiAPI.py script here
+import geminiAi as gemini
 
 app = FastAPI()
 
@@ -23,6 +25,8 @@ app.add_middleware(
 async def upload_audio(file: UploadFile = File(...)):
     with open(f"{file.filename}", "wb") as buffer:
         shutil.copyfileobj(file.file, buffer)
+    
+    gemini.main()
 
     return {"filename": file.filename}
 
@@ -30,4 +34,3 @@ async def upload_audio(file: UploadFile = File(...)):
 async def process_audio():
     # send the output.mp3 file to the frontend
     return FileResponse("output.mp3")
-
