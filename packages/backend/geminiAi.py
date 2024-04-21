@@ -23,7 +23,7 @@ def upload_audio_file(file_path):
 # Process audio file
 local_audio_file_path = '../backend/recording.mp3'
 audio_file = upload_audio_file(local_audio_file_path)
-prompt = "Listen carefully to the following audio file. Provide a brief summary."
+prompt = "Listen carefully to the following audio file. Provide 2 sentences of feedback on the language they are speaking and how well they are speaking it. Don't be afraid to correct them if they are wrong. Also correct them in the same language they are using."
 model_name = 'models/gemini-1.5-pro-latest'
 model = genai.GenerativeModel(model_name)
 response = model.generate_content([prompt, audio_file])

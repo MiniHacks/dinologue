@@ -1,4 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { Box, IconButton } from '@chakra-ui/react';
+import { FaMicrophone, FaStop } from 'react-icons/fa'; // Using React Icons for more options
 
 const AudioRecorder: React.FC = () => {
   const [stream, setStream] = useState<MediaStream | null>(null);
@@ -55,7 +57,7 @@ const AudioRecorder: React.FC = () => {
     formData.append('file', audioBlob, 'recording.mp3');
 
     try {
-      const response = await fetch('http://localhost:8000/upload/', {  // Change the URL/port as necessary
+      const response = await fetch('http://localhost:8000/upload/', {
         method: 'POST',
         body: formData,
       });
@@ -72,15 +74,27 @@ const AudioRecorder: React.FC = () => {
   };
 
   return (
-    <div>
-      <button onClick={handleStartRecording} disabled={mediaRecorder?.state === 'recording'}>
-        Start Recording
-      </button>
-      <button onClick={handleStopRecording} disabled={!mediaRecorder || mediaRecorder.state !== 'recording'}>
-        Stop Recording
-      </button>
+    <Box px={"10"} py={"5"}>
+      <IconButton 
+        icon={<FaMicrophone />} 
+        onClick={handleStartRecording} 
+        isDisabled={mediaRecorder?.state === 'recording'}
+        aria-label="Start recording"
+        colorScheme="red"
+        size="lg"
+        m={2}
+      />
+      <IconButton 
+        icon={<FaStop />}
+        onClick={handleStopRecording} 
+        isDisabled={!mediaRecorder || mediaRecorder.state !== 'recording'}
+        aria-label="Stop recording"
+        colorScheme="red"
+        size="lg"
+        m={2}
+      />
       {audioUrl && <audio src={audioUrl} controls autoPlay />}
-    </div>
+    </Box>
   );
 };
 

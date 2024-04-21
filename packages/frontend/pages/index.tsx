@@ -134,7 +134,7 @@ const Home: NextPage = () => {
         </svg>
       </Box>
 
-      <VStack mt={"0"}>
+      <VStack mt={"250"}>
           <HStack>
             <Text fontSize={"50px"} fontWeight={"bold"} color={"#453C3C"} fontFamily={"Poppins"}>dino</Text>
             <Text fontSize={"50px"} fontWeight={"bold"} color={"#FFFFFF"} fontFamily={"Poppins"}>logue</Text>
@@ -151,6 +151,7 @@ const Home: NextPage = () => {
             marginTop={"20px"}
             onClick={navigateToRecorder}
             aria-label="Start audio recording"
+            zIndex={"2"}
           >
             Start Here
           </Button>

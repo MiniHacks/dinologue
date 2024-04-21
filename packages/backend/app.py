@@ -17,15 +17,6 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-@app.get("/")
-async def hello():
-    print("Route /hello was called")
-    return {"message": "Hello, world!"}
-
-@app.get("/api/hello")
-async def hello():
-    print("Route /api/hello was called")
-    return {"message": "Hello, bitches!"}
 
 @app.post("/upload/")
 async def upload_audio(file: UploadFile = File(...)):
