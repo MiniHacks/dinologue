@@ -1,4 +1,5 @@
 import type { NextPage } from "next";
+import { useRouter } from "next/router";
 import {
   Box,
   Center,
@@ -29,6 +30,12 @@ const Home: NextPage = () => {
       </Center>
     ),
   });
+
+  const router = useRouter();
+
+  const navigateToRecorder = () => {
+    router.push('/recorder');
+  };
 
   return (
   <PageLayout title={"Dinologue"}>
@@ -127,42 +134,27 @@ const Home: NextPage = () => {
         </svg>
       </Box>
 
-      <VStack mt={"250"}>
-        <HStack>
-      <Box style={{
-        fontSize: "50px",
-        fontWeight: "bold",
-        color: "#453C3C",
-        fontFamily: "Poppins",
-        textAlign: "center",
-        marginRight: "-6px"
-      
-      }}>dino</Box>
-      <Box style={{
-        fontSize: "50px",
-        fontWeight: "bold",
-        color: "#FFFFFF",
-        fontFamily: "Poppins",
-        textAlign: "center",
-      
-      }}>logue</Box>
-      </HStack>
-      <Button style={{
-        backgroundColor: "#453C3C",
-        color: "#FFFFFF",
-        borderRadius: "20px",
-        width: "150px",
-        height: "50px",
-        fontSize: "20px",
-        fontWeight: "300",
-        fontFamily: "Poppins",
-        marginTop: "20px"
-      
-      }}>
-        <Text>start here</Text>
-      </Button>
-      </VStack>
-      
+      <VStack mt={"0"}>
+          <HStack>
+            <Text fontSize={"50px"} fontWeight={"bold"} color={"#453C3C"} fontFamily={"Poppins"}>dino</Text>
+            <Text fontSize={"50px"} fontWeight={"bold"} color={"#FFFFFF"} fontFamily={"Poppins"}>logue</Text>
+          </HStack>
+          <Button
+            backgroundColor={"#453C3C"}
+            color={"#FFFFFF"}
+            borderRadius={"20px"}
+            width={"150px"}
+            height={"50px"}
+            fontSize={"20px"}
+            fontWeight={"300"}
+            fontFamily={"Poppins"}
+            marginTop={"20px"}
+            onClick={navigateToRecorder}
+            aria-label="Start audio recording"
+          >
+            Start Here
+          </Button>
+        </VStack>
       </Box>
       <Box position="absolute" bottom="-60" left="80" zIndex="1" height="100%" width="100%">
         <DynamicModel /> 

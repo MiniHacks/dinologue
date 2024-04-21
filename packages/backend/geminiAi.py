@@ -21,7 +21,7 @@ def upload_audio_file(file_path):
     return genai.upload_file(path=file_path)
 
 # Process audio file
-local_audio_file_path = '../backend/music.mp3'
+local_audio_file_path = '../backend/recording.mp3'
 audio_file = upload_audio_file(local_audio_file_path)
 prompt = "Listen carefully to the following audio file. Provide a brief summary."
 model_name = 'models/gemini-1.5-pro-latest'
