@@ -40,7 +40,7 @@ const Home: NextPage = () => {
   return (
   <PageLayout title={"Dinologue"}>
       <Box px={10} py={5} maxWidth="100%" minH="100%">
-      <Button variant={"ghost"} position={"absolute"} top={"75px"} left={"1295px"} zIndex={2} 
+      <Button variant={"ghost"} position={"absolute"} top={"75px"} left={"1240px"} zIndex={2} 
       _hover={{
         variant: "ghost",
         textDecoration: "underline"
@@ -54,7 +54,7 @@ const Home: NextPage = () => {
     }}>
       <Link>devpost</Link>
     </Button>
-    <Button variant={"ghost"} position={"absolute"} top={"80px"} left={"420px"} zIndex={2} 
+    <Button variant={"ghost"} position={"absolute"} top={"80px"} left={"375px"} zIndex={2} 
       _hover={{
         variant: "ghost",
         textDecoration: "underline"
@@ -68,7 +68,7 @@ const Home: NextPage = () => {
     }}>
       <Link target="blank" href={"https://github.com/iamstutishah/dinologue"}>github</Link>
     </Button>
-    <Button variant={"ghost"} position={"absolute"} top={"125px"} left={"860px"} zIndex={2} 
+    <Button variant={"ghost"} position={"absolute"} top={"125px"} left={"810px"} zIndex={2} 
       _hover={{
         variant: "ghost",
         textDecoration: "underline"
@@ -82,7 +82,7 @@ const Home: NextPage = () => {
     }}>
       <Link>about us</Link>
     </Button>
-    <Button variant={"ghost"} position={"absolute"} top={"250px"} left={"210px"} zIndex={2} 
+    <Button variant={"ghost"} position={"absolute"} top={"250px"} left={"150px"} zIndex={2} 
       _hover={{
         variant: "ghost",
         textDecoration: "underline"
